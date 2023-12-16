@@ -237,7 +237,7 @@ indicadores = ["Grados de la Red", "Centralidad de Intermediación", "Centralida
 
 indicadores_selec = st.sidebar.multiselect("Indicadores:",indicadores)
 
-st.title("¿Quién es el dueño del Dow Jones?")
+st.title("¿Quién es el dueño del Dow Jones? Holi xd")
 st.header("Red Social del Dow Jones")
 st.write("Un red social es un estructura que sirve para representar entidades **(nodos)** y relaciones **(ejes, aristas)**."
          " En el contexto financiero sirve para entender y visualizar relaciones de inversión y la propiedad de activos de las empresas."
