@@ -1,7 +1,7 @@
-Quién es dueño del Dow Jones
+# Quién es dueño del Dow Jones
 Este proyecto utiliza técnicas de análisis de redes para explorar la estructura y dinámica de la red financiera del Dow Jones Industrial Average (DJIA). La red se construye a partir de las relaciones de propiedad e inversión entre las principales instituciones financieras que componen el índice DJIA.
 
-Contenido del Proyecto
+## Contenido del Proyecto
 1. Creación de la Red
 La red se genera a partir de la base de datos "all_holds.csv", que contiene información sobre las conexiones entre los tenedores institucionales y las compañías en el Dow Jones.
 
@@ -17,7 +17,7 @@ Se utiliza el algoritmo de Louvain para detectar comunidades dentro de la red. C
 5. Análisis de Roles en la Red
 Se identifican y visualizan nodos destacados, como Hubs, Bridges y Outliers, que desempeñan roles clave en la transmisión de información y conectividad de la red.
 
-Resultados Destacados
+## Resultados Destacados
 Visualización Interactiva de la Red: Explora la red financiera del Dow Jones de manera interactiva con la capacidad de hacer zoom y resaltar nodos específicos.
 
 Análisis de Indicadores Financieros: Comprende la importancia relativa de las instituciones financieras mediante el análisis de grados, centralidades y otros indicadores clave.
@@ -26,7 +26,7 @@ Detección de Comunidades: Descubre agrupaciones naturales de instituciones fina
 
 Roles en la Red: Identifica nodos clave que actúan como Hubs, Bridges y Outliers, proporcionando información sobre la estructura y dinámica de la red.
 
-Instrucciones de Uso
+## Instrucciones de Uso
 Requisitos: Asegúrate de tener instaladas todas las bibliotecas necesarias especificadas en el archivo requirements.txt.
 
 Ejecución Local: Ejecuta el script script_database.py para generar y visualizar la red en tu entorno local.
