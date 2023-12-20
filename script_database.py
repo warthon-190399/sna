@@ -349,6 +349,22 @@ st.plotly_chart(fig_sn)
 st.write("En la red, nodos centrales como Vanguard, BlackRock y State Street ejercen una influencia dominante, afectando las tendencias del mercado. Un grupo intermedio, con empresas como Bank of America y JP Morgan, actúa como intermediario en la transmisión de información. Otro grupo, con impacto moderado, incluye a empresas como Apple y American Express, mientras que un cuarto grupo tiene un impacto marginal, posiblemente especializándose en sectores específicos. Estas posiciones reflejan la complejidad y diversidad de roles en la red financiera.")
 st.divider()
 
+if "Comunidades detectadas en la red" in detec:
+    st.subheader("Comunidades detectadas en la Red")
+    st.write("La detección de comunidades consiste en identificar grupos de nodos en una red que están más estrechamente conectados entre sí que con el resto de la red. Estos grupos de nodos forman comunidades o subgrupos dentro de la red más amplia. El objetivo principal de este análisis es revelar la estructura interna y la organización de la red, destacando las relaciones más fuertes y significativas entre sus miembros.")
+    st.write("En el caso del Dow Jones se detectaron 5 comunidades cada una con un color distinto a modo de diferenciarlas. Usted puede visualizar en el gráfico las comunidades o a través del sidebar donde se visualizarán en formato de tablas.")
+    st.plotly_chart(fig_community)
+
+# Mostrar tabla con nodos ordenados por tamaño
+    if selected_nodes:
+        node_sizes = {node: G.degree[node] for node in selected_nodes}
+        sorted_nodes = sorted(node_sizes.items(), key=lambda x: x[1], reverse=True)
+        
+        st.subheader(f"Comunidad {selected_communities}")
+        st.table(sorted_nodes)
+    else:
+        st.sidebar.info("Selecciona al menos una comunidad en el multiselect.")
+
 if "Centralidad de Vecindad" in indicadores_selec:
     st.subheader("Centralidad de Vecindad")
     st.write("La **Centralidad de Vecindad** se entiende como la relevancia de actores financieros que ocupan **posiciones estratégicas dentro de grupos o comunidades específicas** en una red. Estos nodos pueden tener una influencia significativa en la toma de decisiones y la transmisión de información dentro de su entorno cercano, aunque no necesariamente sean los actores más grandes de la red en su totalidad.")
@@ -420,22 +436,6 @@ if "Bridges" in roles_selec:
     st.write("Nodos que actúan como puentes entre partes diferentes de la red:")
     st.write(df_roles["Bridges"])
     st.divider()
-
-if "Comunidades detectadas en la red" in detec:
-    st.subheader("Comunidades detectadas en la Red")
-    st.write("La detección de comunidades consiste en identificar grupos de nodos en una red que están más estrechamente conectados entre sí que con el resto de la red. Estos grupos de nodos forman comunidades o subgrupos dentro de la red más amplia. El objetivo principal de este análisis es revelar la estructura interna y la organización de la red, destacando las relaciones más fuertes y significativas entre sus miembros.")
-    st.write("En el caso del Dow Jones se detectaron 5 comunidades cada una con un color distinto a modo de diferenciarlas. Usted puede visualizar en el gráfico las comunidades o a través del sidebar donde se visualizarán en formato de tablas.")
-    st.plotly_chart(fig_community)
-
-# Mostrar tabla con nodos ordenados por tamaño
-    if selected_nodes:
-        node_sizes = {node: G.degree[node] for node in selected_nodes}
-        sorted_nodes = sorted(node_sizes.items(), key=lambda x: x[1], reverse=True)
-        
-        st.subheader(f"Comunidad {selected_communities}")
-        st.table(sorted_nodes)
-    else:
-        st.sidebar.info("Selecciona al menos una comunidad en el multiselect.")
 
 if st.sidebar.button("Descarga la Base de Datos"):
     all_holds.to_csv("all_holds.csv", index=False)
