@@ -1,6 +1,6 @@
 # Quién es dueño del Dow Jones
 Este proyecto utiliza técnicas de análisis de redes para explorar la estructura y dinámica de la red financiera del Dow Jones Industrial Average (DJIA). La red se construye a partir de las relaciones de propiedad e inversión entre las principales instituciones financieras que componen el índice DJIA.
-
+Puedes observar la red de manera interactiva en: https://jpzytfdnhp3etl6amzospg.streamlit.app/
 ## Contenido del Proyecto
 1. Creación de la Red
 La red se genera a partir de la base de datos "all_holds.csv", que contiene información sobre las conexiones entre los tenedores institucionales y las compañías en el Dow Jones.
