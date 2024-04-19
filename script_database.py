@@ -312,7 +312,7 @@ fig_community = go.Figure(data=[
 
 #Layout
 
-logo_image = "logo.png"
+logo_image = "logoPulseNegro.png"
 st.sidebar.image(logo_image, width=280)
 st.sidebar.write("Las opciones seleccionadas aparecerán en la parte inferior de la red principal.")
 st.sidebar.title("Seleccione indicadores:")
